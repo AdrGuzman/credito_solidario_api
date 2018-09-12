@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "rol_id": 1,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "opcion_id": 1,
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 2,
+        "rol_id": 1,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "opcion_id": 2,
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 3,
+        "rol_id": 1,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "opcion_id": 3,
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 4,
+        "rol_id": 2,
+        "sistema_id": 2,
+        "modulo_id": 1,
+        "opcion_id": 1,
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    }
+]

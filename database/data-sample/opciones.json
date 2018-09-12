@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "nombre": "crear",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 2,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "nombre": "editar",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 3,
+        "sistema_id": 1,
+        "modulo_id": 1,
+        "nombre": "cambiar-contraseña",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 4,
+        "sistema_id": 2,
+        "modulo_id": 1,
+        "nombre": "crear",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 5,
+        "sistema_id": 2,
+        "modulo_id": 1,
+        "nombre": "eliminar",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    }
+]

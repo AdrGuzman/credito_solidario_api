@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "sistema_id": 1,
+        "nombre": "Usuarios",
+        "ruta": "usuarios",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 2,
+        "sistema_id": 2,
+        "nombre": "Noticias",
+        "ruta": "noticias",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 3,
+        "sistema_id": 2,
+        "nombre": "Galeria",
+        "ruta": "galeria",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    }
+]

@@ -1,0 +1,92 @@
+[
+	{
+		"id" : 1,
+		"usuario" : "1305197500132",
+		"nombre" : "Ana De Jesus Castillo Lara",
+		"correo" : "acastillo@creditosolidario.hn",
+		"contrasenia" : "A002",
+		"fecha_ingreso" : "2016-09-12",
+		"estado": "1"
+	},
+	{
+		"id" : 2,
+		"usuario" : "0801198809085",
+		"nombre" : "Andrea Fabiana Risso Rizzo",
+		"correo" : "arisso@creditosolidario.hn",
+		"contrasenia" : "A003",
+		"fecha_ingreso" : "2015-05-20",
+		"estado": "1"
+	},
+	{
+		"id" : 3,
+		"usuario" : "0801199322406",
+		"nombre" : "Bessy Gabriela Navarro Ramos",
+		"correo" : "bnavarro@creditosolidario.hn",
+		"contrasenia" : "A004",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 4,
+		"usuario" : "0801197803456",
+		"nombre" : "Carby Esther Aguirre Castillo",
+		"correo" : "caguirre@creditosolidario.hn",
+		"contrasenia" : "A005",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 5,
+		"usuario" : "0801197412097",
+		"nombre" : "Carlos David Amador Erazo",
+		"correo" : "camador@creditosolidario.hn",
+		"contrasenia" : "A006",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 6,
+		"usuario" : "0801199207044",
+		"nombre" : "Carlos Gerardo Roque Rodriguez",
+		"correo" : "croque@creditosolidario.hn",
+		"contrasenia" : "A007",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 7,
+		"usuario" : "0801198814713",
+		"nombre" : "Christian Jackeline Abadie Pinel",
+		"correo" : "cabadie@creditosolidario.hn",
+		"contrasenia" : "A009",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 8,
+		"usuario" : "0801198804577",
+		"nombre" : "Claudia Maria Corrales Ramirez",
+		"correo" : "ccorrales@creditosolidario.hn",
+		"contrasenia" : "c0rR4l32",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	},
+	{
+		"id" : 9,
+		"usuario" : "0801198511740",
+		"nombre" : "Gerardo Antonio Figueroa Meraz",
+		"correo" : "gfigueroa@creditosolidario.hn",
+		"contrasenia" : "C113",
+		"fecha_ingreso" : "2015-05-25",
+		"estado": "1"
+	},
+	{
+		"id" : 10,
+		"usuario" : "0716197700046",
+		"nombre" : "Idales Yamileth Sanchez Perez",
+		"correo" : "ysanchez@creditosolidario.hn",
+		"contrasenia" : "A012",
+		"fecha_ingreso" : null,
+		"estado": "1"
+	}
+]

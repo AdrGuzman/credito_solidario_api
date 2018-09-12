@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "Seguridad",
+        "ruta": "seguridad",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Mercadeo",
+        "ruta": "mercadeo",
+        "estado": 1,
+        "creado_por": 1,
+        "actualizado_por": 1
+    }
+]
