@@ -20,6 +20,7 @@ Route::middleware('jwt.auth')->get('/me', function (Request $request) {
 Route::post('login', 'API\AuthController@login');
 Route::post('logout', 'API\AuthController@logout');
 Route::post('password', 'API\AuthController@cambiarContrasenia');
+Route::get('auth/{usuarioid}/sistemas', 'API\AuthController@sistemas');
 Route::get('auth/{usuarioid}/roles', 'API\AuthController@roles');
 Route::get('auth/{rolid}/opciones', 'API\AuthController@opciones');
 
