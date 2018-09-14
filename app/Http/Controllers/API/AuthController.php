@@ -22,8 +22,6 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-
-        //$credenciales = $request->only('usuario', 'contrasenia');
         
         try {
             if (!$token = auth()->attempt(array(
@@ -36,12 +34,6 @@ class AuthController extends Controller
         }
 
         $usuario_actual = $request->usuario;
-        /*$usuario = DB::table('usuarios')->where('usuario', '=', $usuario_actual)->value('id');
-        $roles = DB::table('usuarios_roles')
-            ->join('roles', 'usuarios_roles.rol_id', '=', 'roles.id')
-            ->select('roles.nombre')
-            ->where('usuarios_roles.usuario_id', '=', $usuario)
-            ->get();*/
 
         return response()->json([
             'token_acceso' => $token,
@@ -69,7 +61,7 @@ class AuthController extends Controller
         $sistemas = DB::table('autorizaciones')
             ->join('sistemas', 'autorizaciones.sistema_id', '=', 'sistemas.id')
             ->join('usuarios_roles', 'usuarios_roles.rol_id', '=', 'autorizaciones.rol_id')
-            ->select('autorizaciones.sistema_id', 'sistemas.nombre')
+            ->select('autorizaciones.sistema_id as id', 'sistemas.nombre', 'sistemas.ruta')
             ->where([
                 ['autorizaciones.estado', '=', 1],
                 ['usuarios_roles.usuario_id', '=', $request->usuarioid]
@@ -78,6 +70,23 @@ class AuthController extends Controller
             ->get();
 
         return response()->json($sistemas, 200);
+    }
+
+    function modulos(Request $request) {
+        $roles = DB::table('autorizaciones')
+            ->join('sistemas', 'autorizaciones.sistema_id', '=', 'sistemas.id')
+            ->join('usuarios_roles', 'usuarios_roles.rol_id', 'autorizaciones.rol_id')
+            ->join('modulos', 'autorizaciones.modulo_id', '=', 'modulos.id')
+            ->select('modulos.id as id', 'modulos.nombre', 'modulos.ruta')
+            ->where([
+                ['autorizaciones.estado', '=', 1],
+                ['usuarios_roles.usuario_id', '=', $request->usuarioid],
+                ['autorizaciones.sistema_id', '=', $request->sistemaid]
+            ])
+            ->distinct()
+            ->get();
+
+        return response()->json($roles, 200);
     }
 
     function roles(Request $request) {
