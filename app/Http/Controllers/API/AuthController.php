@@ -92,11 +92,28 @@ class AuthController extends Controller
     function roles(Request $request) {
         $roles = DB::table('usuarios_roles')
             ->join('roles', 'usuarios_roles.rol_id', '=', 'roles.id')
-            ->select('roles.id', 'roles.nombre')
+            ->select('roles.id as id', 'roles.nombre as nombre')
             ->where('usuarios_roles.usuario_id', '=', $request->usuarioid)
             ->get();
 
         return response()->json($roles, 200);
+    }
+
+    function guardarRoles(Request $request) {
+        $json = $request;
+        $data = json_decode($json);
+
+        print_r($data);
+        die();
+
+        DB::table('usuarios_roles')
+            ->insert($data);
+
+        $response = array(
+            'mensaje' => 'Roles registrados'
+        );
+
+        return response()->json($response, 200);
     }
 
     function opciones(Request $request) {
