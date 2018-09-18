@@ -99,21 +99,30 @@ class AuthController extends Controller
         return response()->json($roles, 200);
     }
 
-    function guardarRoles(Request $request) {
-        $json = $request;
-        $data = json_decode($json);
+    public function guardarRoles(Request $request) {
+        //print_r($request);
+        $data = $request;
+        //$data = json_decode($json);
 
-        print_r($data);
+        //print_r($json[0]);
+        //die();
+        //return response()->json($data, 200);
+        //echo 'hola';
+        //var_dump($request[0]);
+        //die();
+
+        foreach ($data as $rol) {
+            echo 'arreglo...';
+            print_r($rol);
+            //DB::table('usuarios_roles')->insert($rol);
+        }
         die();
 
-        DB::table('usuarios_roles')
-            ->insert($data);
-
-        $response = array(
+        /*$response = array(
             'mensaje' => 'Roles registrados'
         );
 
-        return response()->json($response, 200);
+        return response()->json($response, 200);*/
     }
 
     function opciones(Request $request) {
