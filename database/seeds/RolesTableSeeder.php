@@ -20,7 +20,6 @@ class RolesTableSeeder extends Seeder
                 'id' => $rol->id,
                 'nombre' => $rol->nombre,
                 'descripcion' => $rol->descripcion,
-                'fecha_expiracion' => $rol->fecha_expiracion,
                 'estado' => $rol->estado
             ));
         }

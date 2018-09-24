@@ -19,6 +19,7 @@ class CreateTableUsuariosRolesTable extends Migration
             $table->integer('rol_id');
             $table->string('creado_por');
             $table->string('actualizado_por');
+            $table->dateTime('fecha_expiracion');
             $table->timestamps();
         });
     }

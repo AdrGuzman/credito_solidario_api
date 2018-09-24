@@ -3,21 +3,18 @@
         "id": 1,
         "nombre": "Desarrollador",
         "descripcion": "Gestión de sistema",
-        "fecha_expiracion": "2019-01-01",
         "estado": 1
     },
     {
         "id": 2,
         "nombre": "Mercadeo",
         "descripcion": "Gestión de página web",
-        "fecha_expiracion": "2019-01-01",
         "estado": 1
     },
     {
         "id": 3,
         "nombre": "Auxiliar mercadeo",
         "descripcion": "Gestión parcial de página web",
-        "fecha_expiracion": "2019-01-01",
         "estado": 1
     }
 ]

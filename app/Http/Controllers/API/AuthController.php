@@ -92,7 +92,7 @@ class AuthController extends Controller
     function roles(Request $request) {
         $roles = DB::table('usuarios_roles')
             ->join('roles', 'usuarios_roles.rol_id', '=', 'roles.id')
-            ->select('roles.id as id', 'roles.nombre as nombre')
+            ->select('roles.id as id', 'roles.nombre as nombre', 'usuarios_roles.fecha_expiracion as fechaExpiracion')
             ->where('usuarios_roles.usuario_id', '=', $request->usuarioid)
             ->get();
 
@@ -100,29 +100,24 @@ class AuthController extends Controller
     }
 
     public function guardarRoles(Request $request) {
-        //print_r($request);
-        $data = $request;
-        //$data = json_decode($json);
-
-        //print_r($json[0]);
-        //die();
-        //return response()->json($data, 200);
-        //echo 'hola';
-        //var_dump($request[0]);
-        //die();
-
+        $data = json_decode($request->getContent(), true);
+        
         foreach ($data as $rol) {
-            echo 'arreglo...';
-            print_r($rol);
-            //DB::table('usuarios_roles')->insert($rol);
+            DB::table('usuarios_roles')->insert(
+                ['usuario_id' => $rol['usuarioId'],
+                'rol_id' => $rol['rolId'],
+                'creado_por' => 'USR',
+                'actualizado_por' => 'USR',
+                'fecha_expiracion' => date('Y-m-d h:i:s', strtotime($rol['fechaExpiracion']))
+                ]
+            );
         }
-        die();
 
-        /*$response = array(
+        $response = array(
             'mensaje' => 'Roles registrados'
         );
 
-        return response()->json($response, 200);*/
+        return response()->json($response, 200);
     }
 
     function opciones(Request $request) {

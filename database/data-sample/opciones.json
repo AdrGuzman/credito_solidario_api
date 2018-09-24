@@ -29,7 +29,7 @@
     {
         "id": 4,
         "sistema_id": 2,
-        "modulo_id": 1,
+        "modulo_id": 3,
         "nombre": "crear",
         "estado": 1,
         "creado_por": 1,
