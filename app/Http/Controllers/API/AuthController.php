@@ -99,6 +99,10 @@ class AuthController extends Controller
         return response()->json($roles, 200);
     }
 
+    public function rol(Request $request) {
+        $rol = DB::table('');
+    }
+
     public function guardarRoles(Request $request) {
         $data = json_decode($request->getContent(), true);
         
