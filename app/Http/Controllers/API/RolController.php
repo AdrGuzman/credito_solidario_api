@@ -49,9 +49,9 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol)
+    public function show(Rol $role)
     {
-        return new RolesResource($rol);
+        return new RolesResource($role);
     }
 
     /**
@@ -61,11 +61,11 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rol $rol)
+    public function update(Request $request, Rol $role)
     {
-        $rol->update($request->only('nombre', 'descripcion', 'fecha_expiracion', 'estado'));
+        $role->update($request->only('nombre', 'descripcion', 'fecha_expiracion', 'estado'));
 
-        return new RolesResource($rol);
+        return new RolesResource($role);
     }
 
     /**

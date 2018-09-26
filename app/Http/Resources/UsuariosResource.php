@@ -18,11 +18,11 @@ class UsuariosResource extends JsonResource
             'id' => $this->id,
             'usuario' => $this->usuario,
             'nombre' => $this->nombre,
-            'fecha_ingreso' => $this->fecha_ingreso,
+            'fechaIngreso' => $this->fecha_ingreso,
             'correo' => $this->correo,
             'estado' => $this->estado,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'created_at' => (string) $this->created_at,
+            'updated_at' => (string) $this->updated_at
         ];
     }
 }

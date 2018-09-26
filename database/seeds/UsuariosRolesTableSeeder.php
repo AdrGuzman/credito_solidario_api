@@ -17,14 +17,16 @@ class UsuariosRolesTableSeeder extends Seeder
             'rol_id' => 1,
             'creado_por' => 1,
             'actualizado_por' => 1,
-            'fecha_expiracion' => '2018-09-25 11:06:20'
+            'fecha_expiracion' => '2018-09-25 11:06:20',
+            'estado' => 1
         ]);
         DB::table('usuarios_roles')->insert([
             'usuario_id' => 2,
             'rol_id' => 2,
             'creado_por' => 1,
             'actualizado_por' => 1,
-            'fecha_expiracion' => '2018-09-25 11:06:20'
+            'fecha_expiracion' => '2018-09-25 11:06:20',
+            'estado' => 1
         ]);
     }
 }

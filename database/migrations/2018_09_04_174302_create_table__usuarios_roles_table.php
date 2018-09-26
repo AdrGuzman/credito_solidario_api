@@ -20,6 +20,7 @@ class CreateTableUsuariosRolesTable extends Migration
             $table->string('creado_por');
             $table->string('actualizado_por');
             $table->dateTime('fecha_expiracion');
+            $table->integer('estado');
             $table->timestamps();
         });
     }

@@ -17,7 +17,6 @@ class CreateRolsTable extends Migration
             $table->increments('id');
             $table->string('nombre', 45);
             $table->string('descripcion', 500);
-            $table->dateTime('fecha_expiracion');
             $table->integer('estado');
             $table->timestamps();
         });

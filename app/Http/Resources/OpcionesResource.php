@@ -20,8 +20,8 @@ class OpcionesResource extends JsonResource
             'modulo_id' => $this->modulo_id,
             'nombre' => $this->nombre,
             'estado' => $this->estado,
-            'creado_por' => $this->creado_por,
-            'actualizado_por' => $this->actualizado_por
+            'creado_por' => (string) $this->creado_por,
+            'actualizado_por' => (string) $this->actualizado_por
         ];
     }
 }

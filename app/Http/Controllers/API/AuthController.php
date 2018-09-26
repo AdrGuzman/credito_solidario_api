@@ -100,7 +100,15 @@ class AuthController extends Controller
     }
 
     public function rol(Request $request) {
-        $rol = DB::table('');
+        $rol = DB::table('usuarios_roles')
+            ->select('usuarios_roles.rol_id as rolId', 'usuarios_roles.fecha_expiracion as fechaExpiracion', 'usuarios_roles.estado')
+            ->where([
+                ['usuarios_roles.rol_id', '=', $request->rolid],
+                ['usuarios_roles.usuario_id', '=', $request->usuarioid]
+            ])
+            ->get();
+
+        return response()->json($rol, 200);
     }
 
     public function guardarRoles(Request $request) {
@@ -110,6 +118,7 @@ class AuthController extends Controller
             DB::table('usuarios_roles')->insert(
                 ['usuario_id' => $rol['usuarioId'],
                 'rol_id' => $rol['rolId'],
+                'estado' => $rol['estado'],
                 'creado_por' => 'USR',
                 'actualizado_por' => 'USR',
                 'fecha_expiracion' => date('Y-m-d h:i:s', strtotime($rol['fechaExpiracion']))

@@ -21,13 +21,17 @@ Route::post('login', 'API\AuthController@login');
 Route::post('logout', 'API\AuthController@logout');
 Route::post('password', 'API\AuthController@cambiarContrasenia');
 Route::post('auth/roles', 'API\AuthController@guardarRoles');
+Route::put('auth/roles', 'API\AuthController@actuaizarRol');
 Route::get('auth/{usuarioid}/sistemas', 'API\AuthController@sistemas');
 Route::get('auth/{usuarioid}/{sistemaid}/modulos', 'API\AuthController@modulos');
 Route::get('auth/{usuarioid}/roles', 'API\AuthController@roles');
+Route::get('auth/{usuarioid}/{rolid}/roles', 'API\AuthController@rol');
 Route::get('auth/{rolid}/opciones', 'API\AuthController@opciones');
 
 Route::apiResources([
     'usuarios' => 'API\UsuarioController',
     'roles' => 'API\RolController',
-    'opciones' => 'API\OpcionController'
+    'sistemas' => 'API\SistemaController',
+    'opciones' => 'API\OpcionController',
+    'modulos' => 'API\ModuloController'
 ]);

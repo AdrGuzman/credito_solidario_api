@@ -51,7 +51,7 @@ class OpcionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Opcion $opcion)
+    public function show(Opcion $opcione)
     {
         return new OpcionesResource($opcion);
     }
@@ -63,7 +63,7 @@ class OpcionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Opcion $opcion)
+    public function update(Request $request, Opcion $opcione)
     {
         $opcion->update($request->only('sistema_id', 'modulo_id', 'nombre', 'estado', 'creado_por', 'actualizado_por'));
 
