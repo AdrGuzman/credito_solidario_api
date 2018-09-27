@@ -106,7 +106,13 @@ class AuthController extends Controller
                 ['usuarios_roles.rol_id', '=', $request->rolid],
                 ['usuarios_roles.usuario_id', '=', $request->usuarioid]
             ])
-            ->get();
+            ->first();
+
+        $rol->fechaExpiracion = \Carbon\Carbon::parse($rol->fechaExpiracion)->format('c');
+        //echo $algo;
+        //die();
+
+        //->select('usuarios_roles.rol_id as rolId', DB::raw('DATE_FORMAT(usuarios_roles.fecha_expiracion, "%Y/%m/%d %H:%i:%s") as fechaExpiracion'), 'usuarios_roles.estado')
 
         return response()->json($rol, 200);
     }
