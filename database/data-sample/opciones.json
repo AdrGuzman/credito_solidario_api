@@ -3,7 +3,7 @@
         "id": 1,
         "sistema_id": 1,
         "modulo_id": 1,
-        "nombre": "crear",
+        "nombre": "crear_usuario",
         "estado": 1,
         "creado_por": 1,
         "actualizado_por": 1
@@ -12,7 +12,7 @@
         "id": 2,
         "sistema_id": 1,
         "modulo_id": 1,
-        "nombre": "editar",
+        "nombre": "editar_usuario",
         "estado": 1,
         "creado_por": 1,
         "actualizado_por": 1
@@ -21,7 +21,7 @@
         "id": 3,
         "sistema_id": 1,
         "modulo_id": 1,
-        "nombre": "cambiar-contraseña",
+        "nombre": "cambiar.contraseña_usuario",
         "estado": 1,
         "creado_por": 1,
         "actualizado_por": 1

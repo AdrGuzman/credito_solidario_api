@@ -64,7 +64,8 @@ class AuthController extends Controller
             ->select('autorizaciones.sistema_id as id', 'sistemas.nombre', 'sistemas.ruta')
             ->where([
                 ['autorizaciones.estado', '=', 1],
-                ['usuarios_roles.usuario_id', '=', $request->usuarioid]
+                ['usuarios_roles.usuario_id', '=', $request->usuarioid],
+                ['usuarios_roles.estado', '=', 1]
             ])
             ->distinct()
             ->get();
@@ -93,7 +94,10 @@ class AuthController extends Controller
         $roles = DB::table('usuarios_roles')
             ->join('roles', 'usuarios_roles.rol_id', '=', 'roles.id')
             ->select('roles.id as id', 'roles.nombre as nombre', 'usuarios_roles.fecha_expiracion as fechaExpiracion')
-            ->where('usuarios_roles.usuario_id', '=', $request->usuarioid)
+            ->where([
+                ['usuarios_roles.usuario_id', '=', $request->usuarioid],
+                ['usuarios_roles.estado', '=', 1]
+                ])
             ->get();
 
         return response()->json($roles, 200);
@@ -139,12 +143,51 @@ class AuthController extends Controller
         return response()->json($response, 200);
     }
 
-    function opciones(Request $request) {
+    public function actualizarRol(Request $request) {
+        $updateDetails = array(
+            'fecha_expiracion' => $request->fechaExpiracion,
+            'estado' => $request->estado,
+            'actualizado_por' => $request->actualizadoPor
+        );
+
+        DB::table('usuarios_roles')
+            ->where([
+                ['usuario_id', '=', $request->usuarioId],
+                ['rol_id', '=', $request->rolId]
+            ])
+            ->update($updateDetails);
+        
+        $response = array(
+            'mensaje' => 'Rol actualizado'
+        );
+
+        return response()->json($response, 200);
+    }
+
+    public function opciones(Request $request) {
         $opciones = DB::table('roles_opciones')
             ->select('opcion_id')
             ->where('roles_opciones.rol_id', '=', $request->rolid)
             ->get();
 
         return $opciones;
+    }
+
+    public function obtenerAutorizaciones(Request $request) {
+        $autorizaciones = DB::table('autorizaciones')
+            ->join('opciones', 'autorizaciones.opcion_id', '=', 'opciones.id')
+            ->join('usuarios_roles', 'autorizaciones.rol_id', '=', 'usuarios_roles.rol_id')
+            ->join('modulos', 'autorizaciones.modulo_id', '=', 'modulos.id')
+            ->select('opciones.nombre')
+            ->where([
+                ['usuarios_roles.rol_id', '=', $request->usuario],
+                ['modulos.nombre', '=', $request->modulo],
+                ['usuarios_roles.estado', '=', 1],
+                ['autorizaciones.estado', '=', 1]
+            ])
+            ->distinct()
+            ->get();
+
+        return response()->json($autorizaciones, 200);
     }
 }
